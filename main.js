@@ -10,4 +10,4 @@ app.vibrateEnabled = canVibrate;
 if (canVibrate && !("vibrate" in navigator)){
   navigator.vibrate = navigator.mozVibrate;
 }
-navigator.vibrate(Infinity);
+navigator.vibrate(100000);
