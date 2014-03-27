@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Maraca - Vibrate API</title>
+	<meta name="description" content="Pure CSS Mobile Devices Freebie from Marvel - all colours of Apple iPhone 5S, iPhone 5C, iPhone 4S, iPad Mini, Nexus 5, Galaxy S5, HTC One and Lumia 920">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="csshake.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<body id="vapp">
+
+<header>
+	<h1>Maraca</h1>
+	<h2>An experiment with the navigator.vibrate() API</h2>
+	<p>
+		Requires 
+		<a href="https://play.google.com/store/apps/details?id=com.chrome.beta">Chrome Beta</a> 
+		or 
+		<a href="https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta">Firefox</a> 
+		on Android (for now). Sorry, iOS users.
+	</p>
+	<h2>Your browser 
+		<span v-show="vibrateEnabled" class="success shake shake-little shake-constant">supports</span> 
+		<span v-show="!vibrateEnabled" class="fail shake shake-little shake-constant">does not support</span> 
+		the vibrate API
+	</h2>
+	<h3>Caution: May deplete your battery life.</h3>
+	<h3>Do not use while driving.</h3>
+</header>
+
+<section id="s5">
+		<div class="device shake shake-constant">
+			<div class="lock"></div>
+			<div class="home"></div>
+			<div class="camera"></div>
+			<div class="speaker"></div>
+			<div class="sensor"></div>
+			<div class="inner"></div>
+			<a class="screen" href="#"></a>
+		</div>
+</section>
+<i v-show="!modalOpen" v-on="click:modalOpen=true"class="fa fa-comments-o"></i>
+<i v-show="modalOpen" v-on="click:modalOpen=false" class="fa fa-times-circle-o"></i>
+<div class="modal" v-show="modalOpen">
+	<h2>Maraca</h2>
+	<h2>A 10 minute API test.</h2>
+	<p>
+		Special thanks to 
+		<a href="http://vuejs.org/">Vue.js</a>,
+		<a href="https://github.com/elrumordelaluz/csshake">CSShake</a>,
+		<a href="https://github.com/marvelapp/devices.css">Marvel's Devices.css</a>,
+		and Ilias's <a href="http://www.illyism.com/journal/vibration-api">blog post</a>
+		which inspired it.
+	</p>
+	<p>
+		Thrown together by <a href="http://therebelrobot.com">theRebelRobot</a><br/>
+		<iframe src="http://ghbtns.com/github-btn.html?user=therebelrobot&type=follow"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200" height="20"></iframe>
+		maraca: <iframe src="http://ghbtns.com/github-btn.html?user=therebelrobot&repo=maraca&type=fork"
+  allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
+  </p>
+</div>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
